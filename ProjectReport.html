@@ -13308,11 +13308,11 @@ div#notebook {
 <p>LIME framework was used to explain results of KNN classifier for standardized input:
 <img src ="Normalized_data.png" width ="300"></p>
 <p><img src ="Lime_output.png" width ="600"></p>
-<p>As per the above results, features like "Client_change_in_balance" and "Merchant_change_in_balance" has a negative influence while features like "Client_New_Balance", "Transaction_Type_CASH_IN" etc has a positive influence in predicting a transaction as fraudulent.</p>
+<p>As per the above results, "Client_change_in_balance", "Merchant_change_in_balance", and "Amount" have the biggest negative influence on the outcome. This makes sense because these three features are all related by the amount of the transaction which we know is a key determinant in predicting fraud.</p>
 <h5 id="SHAP-with-XGBoost">SHAP with XGBoost<a class="anchor-link" href="#SHAP-with-XGBoost">&#182;</a></h5><p>SHAP (SHapley Additive exPlanation) leverages the idea of Shapley values for model feature influence scoring. The technical definition of a Shapley value is the “average marginal contribution of a feature value over all possible coalitions.” In other words, Shapley values consider all possible predictions for an instance using all possible combinations of inputs. Because of this exhaustive approach, SHAP can guarantee properties like consistency and local accuracy.</p>
 <p>Similar to LIME framework, SHAP framework was used for model interpretability</p>
 <p><img src ="shap_output.png" width ="600"></p>
-<p>As per the above results, "Percentage of Balance", "Client change in Balance", and "Client New Balance" are the top 3 factors for classifying a transaction as fraudulent for XGBoost classifier.</p>
+<p>As per the above results, "Percentage of Balance", "Client change in Balance", and "Client New Balance" are the top 3 factors for classifying a transaction as fraudulent for XGBoost classifier. This seems reasonable to us because these three features are all client based and are related to the amount of the transaction which is an essential indicator of fraudulent activity.</p>
 
 </div>
 </div>
